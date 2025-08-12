@@ -81,6 +81,16 @@ class Eval(ABC):
                     interaction.model_answer, interaction.reference_answer
                 )
 
+    def save_question_answer(self) -> dict[int, dict[str, str]]:
+
+        result: dict[int, str] = {} 
+        for i in range(len(self.interactions)):
+            print(self.interactions[i].model_answer)
+            result[str(i)] = {"model_answer": self.interactions[i].model_answer,
+                         "reference_answer": self.interactions[i].reference_answer}
+
+        return result 
+
     def aggregate_metrics(self) -> dict[str, float]:
         """Aggregates metrics across all the interactions."""
         overall_metrics: dict[str, float] = {}

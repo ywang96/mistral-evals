@@ -27,6 +27,10 @@ def evaluate(
     eval_task.get_responses(model)
     eval_task.compute_metrics()
 
+    result = json.dumps(eval_task.save_question_answer(), indent=4)
+    with (output_dir / f"answers_{eval_name}.json").open("w") as f:
+        f.write(result)
+
     metrics_output = json.dumps(eval_task.aggregate_metrics(), indent=4)
     with (output_dir / f"{eval_name}.json").open("w") as f:
         f.write(metrics_output)
