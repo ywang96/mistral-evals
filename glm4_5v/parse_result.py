@@ -104,7 +104,8 @@ for qid, qa in data.items():
             denominator = int(parts[1])
             final_ans_norm = float(numerator) / float(denominator)
         for ref_ans in ref_norms:
-            # NOTE: specify rounded=False for an exact match.
+            # NOTE: when checkig numeric values, specify rounded=False 
+            # for an exact match.
             if check_equal(final_ans_norm, ref_ans, rounded=True):
                 correct_count += 1
     else:
