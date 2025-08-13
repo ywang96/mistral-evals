@@ -85,7 +85,6 @@ class Eval(ABC):
 
         result: dict[int, str] = {} 
         for i in range(len(self.interactions)):
-            print(self.interactions[i].model_answer)
             result[str(i)] = {"model_answer": self.interactions[i].model_answer,
                          "reference_answer": self.interactions[i].reference_answer}
 
