@@ -6,7 +6,6 @@ vllm serve zai-org/GLM-4.5V \
      --tool-call-parser glm45 \
      --reasoning-parser glm45 \
      --enable-auto-tool-choice \
-     --served-model-name glm-4.5v \
      --allowed-local-media-path / \
      --media-io-kwargs '{"video": {"num_frames": -1}}'
 ```
