@@ -21,5 +21,6 @@ python -m eval.run eval_vllm \
 
 ## Parse Result
 ```
+cd glm4_5v
 python3 parse_result.py
 ```
